@@ -2,7 +2,7 @@ package com.kalomiris.model.pieces;
 
 public abstract class Piece {
     int m_XPosition, m_YPosiiton;
-    boolean color; // 0 = White, 1 = Black
+    boolean color; // 0 = White, 1 = Black // TODO change that attribute to a String because it is confusing like a boolean.
 
     /**
      * Constructor for Piece
