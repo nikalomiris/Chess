@@ -1,8 +1,8 @@
 package com.kalomiris.model.pieces;
 
 public abstract class Piece {
-    private int m_XPosition, m_YPosiiton;
-    private boolean color; // 0 = White, 1 = Black
+    int m_XPosition, m_YPosiiton;
+    boolean color; // 0 = White, 1 = Black
 
     /**
      * Constructor for Piece
