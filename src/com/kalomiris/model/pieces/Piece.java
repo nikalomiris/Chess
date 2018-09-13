@@ -33,4 +33,16 @@ public abstract class Piece {
      * @return an array of all the x, y positions that are on the path
      */
     public abstract int[][] drawPath(int startx, int starty, int finalx, int finaly);
+
+    public int getM_XPosition() {
+        return m_XPosition;
+    }
+
+    public int getM_YPosiiton() {
+        return m_YPosiiton;
+    }
+
+    public boolean isColor() {
+        return color;
+    }
 }
