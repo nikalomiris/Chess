@@ -6,22 +6,23 @@ import com.kalomiris.game.Type;
 public class Pawn extends Piece{
     Type type;
 
-    public Pawn(int x, int y, boolean color) {
+    public Pawn(int x, int y, String color) {
         super (x, y , color);
+        name = "Pawn";
         this.type = Type.PAWN;
     }
 
     @Override
     public boolean isValidPath(int finalXPosition, int finalYPosition) {
         if (m_XPosition != finalXPosition) return false; // Pawns cannot move horizontally
-        if (!color) { // We assume that the White pieces start from the top of the board
+        if (color.equalsIgnoreCase("white")) { // We assume that the White pieces start from the top of the board
             if (Board.getNumberOfMoves() > 0 && finalYPosition - m_YPosiiton > 1) {
                 return false;
             } else if (finalYPosition - m_YPosiiton > 1) {
                 return false;
             }
         }
-        if (color) { // We assume that the Black pieces start from the bottom of the board
+        if (color.equalsIgnoreCase("black")) { // We assume that the Black pieces start from the bottom of the board
             if (Board.getNumberOfMoves() > 0 && m_YPosiiton - finalYPosition > 1) {
                 return false;
             } else if (m_YPosiiton - finalYPosition > 1) {

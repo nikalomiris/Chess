@@ -2,7 +2,8 @@ package com.kalomiris.model.pieces;
 
 public abstract class Piece {
     int m_XPosition, m_YPosiiton;
-    boolean color; // 0 = White, 1 = Black // TODO change that attribute to a String because it is confusing like a boolean.
+    String color; // 0 = White, 1 = Black
+    String name;
 
     /**
      * Constructor for Piece
@@ -10,7 +11,7 @@ public abstract class Piece {
      * @param m_YPosiiton the y location of the piece
      * @param color the color/player of the piece (0 is White and 1 is Black)
      */
-    public Piece(int m_XPosition, int m_YPosiiton, boolean color) {
+    public Piece(int m_XPosition, int m_YPosiiton, String color) {
         this.m_XPosition = m_XPosition;
         this.m_YPosiiton = m_YPosiiton;
         this.color = color;
@@ -42,7 +43,11 @@ public abstract class Piece {
         return m_YPosiiton;
     }
 
-    public boolean isColor() {
+    public String getColor() {
         return color;
+    }
+
+    public String getName() {
+        return name;
     }
 }
