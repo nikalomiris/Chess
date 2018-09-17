@@ -26,7 +26,7 @@ public class Knight extends Piece {
 
     @Override
     public int[][] drawPath(int finalx, int finaly) {
-        int[][] result = new int[4][4];
+        int[][] result = new int[4][2];
         result[0][0] = m_XPosition;
         result[0][1] = m_YPosition;
 

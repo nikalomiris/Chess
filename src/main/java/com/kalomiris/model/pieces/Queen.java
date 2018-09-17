@@ -29,11 +29,11 @@ public class Queen extends Piece {
     public int[][] drawPath(int finalx, int finaly) {
         int numberOfSteps = Math.abs(m_XPosition - finalx) == 0 ?
                 Math.abs(m_YPosition - finaly) : Math.abs(m_XPosition - finalx);
-        int[][] result = new int[numberOfSteps][numberOfSteps];
+        int[][] result = new int[numberOfSteps + 1][2];
         result[0][0] = m_XPosition;
         result[0][1] = m_YPosition;
 
-        for (int i = 1; i < numberOfSteps; i++) {
+        for (int i = 1; i <= numberOfSteps; i++) {
             result[i][0] = upRightXY(finalx, finaly)[1] ? m_XPosition + i
                     : (upRightXY(finalx, finaly)[2] ? m_XPosition : m_XPosition - i);
             result[i][1] = upRightXY(finalx, finaly)[0] ? m_YPosition + i

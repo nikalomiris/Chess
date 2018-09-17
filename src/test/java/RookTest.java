@@ -1,5 +1,4 @@
-package com.kalomiris.model.pieces;
-
+import com.kalomiris.model.pieces.Rook;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
