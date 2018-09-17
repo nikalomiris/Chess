@@ -29,7 +29,7 @@ public class Rook extends Piece {
         int[][] result = new int[numberOfSteps + 1][2];
         result[0][0] = m_XPosition;
         result[0][1] = m_YPosition;
-        for (int i = 1; i <= numberOfSteps; i++) { // TODO check that.
+        for (int i = 1; i <= numberOfSteps; i++) {
             result[i][0] = upRightXY(finalx, finaly)[1] ? m_XPosition + i
                     : (upRightXY(finalx, finaly)[2] ? m_XPosition : m_XPosition - i);
             result[i][1] = upRightXY(finalx, finaly)[0] ? m_YPosition + i
