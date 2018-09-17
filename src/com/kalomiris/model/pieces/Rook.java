@@ -26,7 +26,6 @@ public class Rook extends Piece {
     @Override
     public int[][] drawPath(int finalx, int finaly) {
         int numberOfSteps = Math.abs(m_XPosition - finalx) + Math.abs(m_YPosition - finaly);
-        System.out.println("numberOfSteps: " + numberOfSteps);
         int[][] result = new int[numberOfSteps + 1][2];
         result[0][0] = m_XPosition;
         result[0][1] = m_YPosition;

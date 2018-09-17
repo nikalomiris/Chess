@@ -23,7 +23,13 @@ public class RookTest {
     @Test
     public void drawPath() throws Exception {
         int[][] path = {{3,4},{3,5},{3,6},{3,7}};
+        int[][] path1 = {{3,4},{3,3},{3,2},{3,1},{3,0}};
+        int[][] path2 = {{3,4},{4,4},{5,4},{6,4},{7,4}};
+        int[][] path3 = {{3,4},{2,4},{1,4},{0,4}};
         assertArrayEquals(path, rook.drawPath(3, 7));
+        assertArrayEquals(path1, rook.drawPath(3, 0));
+        assertArrayEquals(path2, rook.drawPath(7, 4));
+        assertArrayEquals(path3, rook.drawPath(0, 4));
     }
 
 }

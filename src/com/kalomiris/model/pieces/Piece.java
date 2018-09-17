@@ -50,7 +50,7 @@ public abstract class Piece {
             stableX = true;
             result[2] = stableX;
         }
-        if (m_YPosition < finalY) {
+        if (m_YPosition == finalY) {
             stableY = true;
             result[3] = stableY;
         }
