@@ -20,16 +20,16 @@ public class King extends Piece {
 
     @Override
     public boolean isValidPath(int finalXPosition, int finalYPosition) {
-        return (Math.abs(m_XPosition - finalXPosition) < 2 && Math.abs(m_YPosiiton - finalYPosition) < 2);
+        return (Math.abs(m_XPosition - finalXPosition) < 2 && Math.abs(m_YPosition - finalYPosition) < 2);
     }
 
     @Override
-    public int[][] drawPath(int startx, int starty, int finalx, int finaly) {
+    public int[][] drawPath(int finalx, int finaly) {
         int[][] result = new int[2][2];
         // result[0][*] holds the starting x, y position
         // result[1][*] holds the final x, y position
-        result[0][0] = startx;
-        result[0][1] = starty;
+        result[0][0] = m_XPosition;
+        result[0][1] = m_YPosition;
         result[1][0] = finalx;
         result[1][1] = finaly;
 

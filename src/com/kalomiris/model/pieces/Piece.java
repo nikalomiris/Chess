@@ -1,20 +1,22 @@
 package com.kalomiris.model.pieces;
 
 public abstract class Piece {
-    int m_XPosition, m_YPosiiton;
+    int m_XPosition, m_YPosition;
     String color; // 0 = White, 1 = Black
     String name;
+    boolean inTheGame;
 
     /**
      * Constructor for Piece
      * @param m_XPosition the x location of the piece
-     * @param m_YPosiiton the y location of the piece
+     * @param m_YPosition the y location of the piece
      * @param color the color/player of the piece (0 is White and 1 is Black)
      */
-    public Piece(int m_XPosition, int m_YPosiiton, String color) {
+    public Piece(int m_XPosition, int m_YPosition, String color) {
         this.m_XPosition = m_XPosition;
-        this.m_YPosiiton = m_YPosiiton;
+        this.m_YPosition = m_YPosition;
         this.color = color;
+        this.inTheGame = true;
     }
 
     /**
@@ -27,20 +29,40 @@ public abstract class Piece {
 
     /**
      * A function that draws a path from a starting point to another, based on the type of the piece
-     * @param startx initial x position
-     * @param starty initial y position
      * @param finalx final x position
      * @param finaly final y position
      * @return an array of all the x, y positions that are on the path
      */
-    public abstract int[][] drawPath(int startx, int starty, int finalx, int finaly);
+    public abstract int[][] drawPath(int finalx, int finaly);
+
+    public boolean[] upRightXY(int finalX, int finalY) {
+        boolean up = false, right = false, stableX = false, stableY = false;
+        boolean[] result = new boolean[4];
+        if (m_YPosition < finalY) {
+            up = true;
+            result[0] = up;
+        }
+        if (m_XPosition < finalX) {
+            right = true;
+            result[1] = right;
+        }
+        if (m_XPosition == finalX) {
+            stableX = true;
+            result[2] = stableX;
+        }
+        if (m_YPosition < finalY) {
+            stableY = true;
+            result[3] = stableY;
+        }
+        return result;
+    }
 
     public int getM_XPosition() {
         return m_XPosition;
     }
 
-    public int getM_YPosiiton() {
-        return m_YPosiiton;
+    public int getM_YPosition() {
+        return m_YPosition;
     }
 
     public String getColor() {
@@ -49,5 +71,13 @@ public abstract class Piece {
 
     public String getName() {
         return name;
+    }
+
+    public boolean isInTheGame() {
+        return inTheGame;
+    }
+
+    public void setInTheGame(boolean inTheGame) {
+        this.inTheGame = inTheGame;
     }
 }

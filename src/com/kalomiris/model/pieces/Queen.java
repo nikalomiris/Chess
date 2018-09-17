@@ -24,7 +24,7 @@ public class Queen extends Piece {
     }
 
     @Override
-    public int[][] drawPath(int startx, int starty, int finalx, int finaly) {
+    public int[][] drawPath(int finalx, int finaly) {
         return new int[0][]; // TODO Implement that
     }
 
