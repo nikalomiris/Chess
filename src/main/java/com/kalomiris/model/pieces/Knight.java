@@ -31,8 +31,19 @@ public class Knight extends Piece {
         result[0][1] = m_YPosition;
 
         for (int i = 1; i < 3; i++) {
-            result[i][0] = upRightXY(finalx, finaly)[1] ? m_XPosition + i : m_XPosition - i;
-            result[i][1] = upRightXY(finalx, finaly)[0] ? m_XPosition + i : m_XPosition - i;
+            if (finalx > m_XPosition + 1) { //The knight starts its movement to the right
+                result[i][0] = m_XPosition + i;
+                result[i][1] = m_YPosition;
+            } else if (m_XPosition > finalx + 1) { // The knight starts its movement to the left
+                result[i][0] = m_XPosition - i;
+                result[i][1] = m_YPosition;
+            } else if (finaly > m_YPosition + 1) { // The knight starts its movement upwards
+                result[i][0] = m_XPosition;
+                result[i][1] = m_YPosition + i;
+            } else if (m_YPosition > finaly + 1) { // The knight starts its movement downwards
+                result[i][0] = m_XPosition;
+                result[i][1] = m_YPosition - i;
+            }
         }
 
         result[3][0] = finalx;

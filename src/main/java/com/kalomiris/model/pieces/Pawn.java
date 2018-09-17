@@ -18,7 +18,8 @@ public class Pawn extends Piece{
         if (color.equalsIgnoreCase("white")) { // We assume that the White pieces start from the top of the board
             if (Board.getNumberOfMoves() > 0 && finalYPosition - m_YPosition > 1) {
                 return false;
-            } else if (finalYPosition - m_YPosition > 1) {
+            }
+            if (finalYPosition - m_YPosition > 2 || finalYPosition < m_YPosition) {
                 return false;
             }
         }
