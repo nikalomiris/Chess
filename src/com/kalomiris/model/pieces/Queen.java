@@ -36,8 +36,8 @@ public class Queen extends Piece {
         for (int i = 1; i < numberOfSteps; i++) {
             result[i][0] = upRightXY(finalx, finaly)[1] ? m_XPosition + i
                     : (upRightXY(finalx, finaly)[2] ? m_XPosition : m_XPosition - i);
-            result[i][1] = upRightXY(finalx, finaly)[0] ? m_XPosition + i
-                    : (upRightXY(finalx, finaly)[3] ? m_XPosition : m_XPosition - i);
+            result[i][1] = upRightXY(finalx, finaly)[0] ? m_YPosition + i
+                    : (upRightXY(finalx, finaly)[3] ? m_YPosition : m_YPosition - i);
         }
 
         return result;
