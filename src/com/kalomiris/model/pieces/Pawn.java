@@ -42,7 +42,7 @@ public class Pawn extends Piece{
             result[1][0] = upRightXY(finalx, finaly)[1] ? m_XPosition + 1 : m_XPosition - 1;
             result[1][1] = upRightXY(finalx, finaly)[0] ? m_YPosition + 1 : m_YPosition - 1;
         } else {
-            for (int i = 1; i <= numberOfSteps; i++) {
+            for (int i = 1; i < numberOfSteps; i++) {
                 result[i][0] = m_XPosition;
                 result[i][1] = upRightXY(finalx, finaly)[0] ? m_YPosition + i : m_YPosition - i;
             }

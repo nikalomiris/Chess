@@ -20,12 +20,27 @@ public class Queen extends Piece {
 
     @Override
     public boolean isValidPath(int finalXPosition, int finalYPosition) {
-        return false; // TODO Implement that
+        return ((m_XPosition == finalXPosition && m_YPosition != finalYPosition)
+                || (m_YPosition == finalYPosition && m_XPosition != finalXPosition)
+                || (Math.abs(m_XPosition-finalXPosition) == Math.abs(m_YPosition - finalYPosition)));
     }
 
     @Override
     public int[][] drawPath(int finalx, int finaly) {
-        return new int[0][]; // TODO Implement that
+        int numberOfSteps = Math.abs(m_XPosition - finalx) == 0 ?
+                Math.abs(m_YPosition - finaly) : Math.abs(m_XPosition - finalx);
+        int[][] result = new int[numberOfSteps][numberOfSteps];
+        result[0][0] = m_XPosition;
+        result[0][1] = m_YPosition;
+
+        for (int i = 1; i < numberOfSteps; i++) {
+            result[i][0] = upRightXY(finalx, finaly)[1] ? m_XPosition + i
+                    : (upRightXY(finalx, finaly)[2] ? m_XPosition : m_XPosition - i);
+            result[i][1] = upRightXY(finalx, finaly)[0] ? m_XPosition + i
+                    : (upRightXY(finalx, finaly)[3] ? m_XPosition : m_XPosition - i);
+        }
+
+        return result;
     }
 
     public Type getType() {

@@ -20,12 +20,25 @@ public class Knight extends Piece {
 
     @Override
     public boolean isValidPath(int finalXPosition, int finalYPosition) {
-        return false; // TODO implement that
+        return ((Math.abs(m_XPosition-finalXPosition) == 2 && Math.abs(m_YPosition-finalYPosition) == 1)
+                || (Math.abs(m_XPosition-finalXPosition) == 1 && Math.abs(m_YPosition-finalYPosition) == 2));
     }
 
     @Override
     public int[][] drawPath(int finalx, int finaly) {
-        return new int[0][]; // TODO implement that
+        int[][] result = new int[4][4];
+        result[0][0] = m_XPosition;
+        result[0][1] = m_YPosition;
+
+        for (int i = 1; i < 3; i++) {
+            result[i][0] = upRightXY(finalx, finaly)[1] ? m_XPosition + i : m_XPosition - i;
+            result[i][1] = upRightXY(finalx, finaly)[0] ? m_XPosition + i : m_XPosition - i;
+        }
+
+        result[3][0] = finalx;
+        result[3][1] = finaly;
+
+        return result;
     }
 
     public Type getType() {

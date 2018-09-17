@@ -32,7 +32,7 @@ public class Bishop extends Piece {
         // result[*][1] holds the y position
         result[0][0] = m_XPosition;
         result[0][1] = m_YPosition;
-        for (int i = 1; i <=numberOfSteps; i++) {
+        for (int i = 1; i < numberOfSteps; i++) {
             result[i][0] = upRightXY(finalx, finaly)[1] ? m_XPosition + i : m_XPosition - i;
             result[i][1] = upRightXY(finalx, finaly)[0] ? m_YPosition + i : m_YPosition - i;
         }
