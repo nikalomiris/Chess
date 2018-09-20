@@ -4,6 +4,7 @@ public abstract class Piece {
     int m_XPosition, m_YPosition;
     String color; // 0 = White, 1 = Black
     String name;
+    boolean canJump;
     boolean inTheGame;
 
     /**
@@ -55,6 +56,10 @@ public abstract class Piece {
             result[3] = stableY;
         }
         return result;
+    }
+
+    public boolean isValidFinalPosition(int finalXPosition, int finalYPosition) {
+        return (finalXPosition <= 7 && finalXPosition >= 0 && finalYPosition <= 7 && finalYPosition >= 0);
     }
 
     public int getM_XPosition() {

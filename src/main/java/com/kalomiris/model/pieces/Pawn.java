@@ -10,6 +10,7 @@ public class Pawn extends Piece{
         super (x, y , color);
         name = "Pawn";
         this.type = Type.PAWN;
+        canJump = false;
     }
 
     @Override

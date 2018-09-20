@@ -16,6 +16,7 @@ public class Bishop extends Piece {
         super(m_XPosition, m_YPosiiton, color);
         name = "Bishop";
         type = Type.BISHOP;
+        canJump = false;
     }
 
     @Override

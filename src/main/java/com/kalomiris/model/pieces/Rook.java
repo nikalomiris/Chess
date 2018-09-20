@@ -16,6 +16,7 @@ public class Rook extends Piece {
         super(m_XPosition, m_YPosiiton, color);
         name = "Rook";
         type = Type.ROOK;
+        canJump = false;
     }
 
     @Override

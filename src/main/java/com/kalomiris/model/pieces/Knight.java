@@ -16,6 +16,7 @@ public class Knight extends Piece {
         super(m_XPosition, m_YPosiiton, color);
         name = "Knight";
         type = Type.KNIGHT;
+        canJump = true;
     }
 
     @Override

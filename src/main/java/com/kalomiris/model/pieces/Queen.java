@@ -16,6 +16,7 @@ public class Queen extends Piece {
         super(m_XPosition, m_YPosiiton, color);
         name = "Queen";
         type = Type.QUEEN;
+        canJump = false;
     }
 
     @Override

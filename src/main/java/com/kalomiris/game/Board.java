@@ -58,10 +58,28 @@ public class Board {
     }
 
     public static void changePiecePosition(Piece piece, int[] startFinal) {
-        Board.piecePositions[startFinal[0]][startFinal[1]] = null;
-        Board.piecePositions[startFinal[2]][startFinal[3]] = piece;
+        if (piece.isValidPath(startFinal[2], startFinal[3])
+                && piece.isValidFinalPosition(startFinal[2], startFinal[3])) {
+            int[][] piecePath = piece.drawPath(startFinal[2], startFinal[3]);
+            if (detectCollisions(piecePath)[0] == -1) {
+                Board.piecePositions[startFinal[0]][startFinal[1]] = null;
+                Board.piecePositions[startFinal[2]][startFinal[3]] = piece;
+            } else {
+                System.out.println("Collision detected. System cannot handle collisions yet.");
+            }
+        } else {
+            System.out.println("That movement is not valid for the " + piece.getName());
+        }
     }
 
+    private static int[] detectCollisions(int[][] piecePath) {
+        for (int i = 0; i < piecePath.length; i++) {
+            if (null != piecePositions[piecePath[i][0]][piecePath[i][1]]) {
+                return new int[] {piecePath[i][0], piecePath[i][1]};
+            }
+        }
+        return new int[] {-1};
+    }
 
     public static void printBoard() {
         for (int i = 0; i < 8; i++) {
