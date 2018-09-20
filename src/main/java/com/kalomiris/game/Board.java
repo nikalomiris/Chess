@@ -2,7 +2,7 @@ package com.kalomiris.game;
 
 import com.kalomiris.model.pieces.*;
 
-public class Board { // Enhancements in the business logic.
+public class Board { // TODO Enhancements in the business logic.
     private static Board ourInstance = new Board();
 
     public static Board getInstance() {
