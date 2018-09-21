@@ -15,23 +15,24 @@ public class Pawn extends Piece{
 
     @Override
     public boolean isValidPath(int finalXPosition, int finalYPosition) {
+        boolean result = true;
         if (m_XPosition != finalXPosition) return false; // Pawns cannot move horizontally
         if (color.equalsIgnoreCase("white")) { // We assume that the White pieces start from the top of the board
             if (Board.getNumberOfMoves() > 0 && finalYPosition - m_YPosition > 1) {
-                return false;
+                result = false;
             }
             if (finalYPosition - m_YPosition > 2 || finalYPosition < m_YPosition) {
-                return false;
+                result = false;
             }
         }
         if (color.equalsIgnoreCase("black")) { // We assume that the Black pieces start from the bottom of the board
             if (Board.getNumberOfMoves() > 0 && m_YPosition - finalYPosition > 1) {
-                return false;
+                result = false;
             } else if (m_YPosition - finalYPosition > 1) {
-                return false;
+                result = false;
             }
         }
-        return true;
+        return result;
     }
 
     @Override
