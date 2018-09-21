@@ -1,5 +1,6 @@
-[![Build Status](https://travis-ci.com/nikalomiris/Chess.svg?branch=master)](https://travis-ci.com/nikalomiris/Chess)
+[![Build Status](https://travis-ci.com/nikalomiris/Chess.svg?branch=master)](https://travis-ci.com/nikalomiris/Chess) <a href="https://codeclimate.com/github/nikalomiris/Chess/maintainability"><img src="https://api.codeclimate.com/v1/badges/6ba14a84b0708a9f0b28/maintainability" /></a>
 # Chess
+# Project Title
 
 One Paragraph of project description goes here
 
