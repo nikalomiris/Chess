@@ -35,22 +35,9 @@ public class Pawn extends Piece{
     }
 
     @Override
-    public int[][] drawPath(int finalx, int finaly) {
+    public int calculateNumberOfSteps(int finalx, int finaly) {
         int numberOfSteps = Math.abs(m_YPosition - finaly);
-        int[][] result = new int[numberOfSteps + 1][2];
-        result[0][0] = m_XPosition;
-        result[0][1] = m_YPosition;
-        if (m_XPosition != finalx) { // The case that the pawn attacked diagonally
-            result[1][0] = upRightXY(finalx, finaly)[1] ? m_XPosition + 1 : m_XPosition - 1;
-            result[1][1] = upRightXY(finalx, finaly)[0] ? m_YPosition + 1 : m_YPosition - 1;
-        } else {
-            for (int i = 1; i <= numberOfSteps; i++) {
-                result[i][0] = m_XPosition;
-                result[i][1] = upRightXY(finalx, finaly)[0] ? m_YPosition + i : m_YPosition - i;
-            }
-        }
-
-        return result;
+        return numberOfSteps;
     }
 
     public Type getType() {

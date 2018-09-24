@@ -37,6 +37,11 @@ public class King extends Piece {
         return result;
     }
 
+    @Override
+    public int calculateNumberOfSteps(int finalx, int finaly) {
+        return 0;
+    }
+
     public Type getType() {
         return type;
     }
