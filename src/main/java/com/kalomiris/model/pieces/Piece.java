@@ -34,7 +34,23 @@ public abstract class Piece {
      * @param finaly final y position
      * @return an array of all the x, y positions that are on the path
      */
-    public abstract int[][] drawPath(int finalx, int finaly);
+    public int[][] drawPath(int finalx, int finaly) {
+        int numberOfSteps = calculateNumberOfSteps(finalx, finaly);
+        int[][] result = new int[numberOfSteps + 1][2];
+        result[0][0] = m_XPosition;
+        result[0][1] = m_YPosition;
+
+        for (int i = 1; i <= numberOfSteps; i++) {
+            result[i][0] = upRightXY(finalx, finaly)[1] ? m_XPosition + i
+                    : (upRightXY(finalx, finaly)[2] ? m_XPosition : m_XPosition - i);
+            result[i][1] = upRightXY(finalx, finaly)[0] ? m_YPosition + i
+                    : (upRightXY(finalx, finaly)[3] ? m_YPosition : m_YPosition - i);
+        }
+
+        return result;
+    }
+
+    public abstract int calculateNumberOfSteps(int finalx, int finaly);
 
     public boolean[] upRightXY(int finalX, int finalY) {
         boolean up = false, right = false, stableX = false, stableY = false;
