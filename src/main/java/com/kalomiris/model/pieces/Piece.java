@@ -39,12 +39,13 @@ public abstract class Piece {
         int[][] result = new int[numberOfSteps + 1][2];
         result[0][0] = m_XPosition;
         result[0][1] = m_YPosition;
+        boolean[] direction = upRightXY(finalx, finaly);
 
         for (int i = 1; i <= numberOfSteps; i++) {
-            result[i][0] = upRightXY(finalx, finaly)[1] ? m_XPosition + i
-                    : (upRightXY(finalx, finaly)[2] ? m_XPosition : m_XPosition - i);
-            result[i][1] = upRightXY(finalx, finaly)[0] ? m_YPosition + i
-                    : (upRightXY(finalx, finaly)[3] ? m_YPosition : m_YPosition - i);
+            result[i][0] = direction[1] ? m_XPosition + i
+                    : (direction[2] ? m_XPosition : m_XPosition - i);
+            result[i][1] = direction[0] ? m_YPosition + i
+                    : (direction[3] ? m_YPosition : m_YPosition - i);
         }
 
         return result;
