@@ -16,7 +16,8 @@ public class Pawn extends Piece{
     @Override
     public boolean isValidPath(int finalXPosition, int finalYPosition) {
         boolean result = true;
-        if (m_XPosition != finalXPosition) return false; // Pawns cannot move horizontally
+        if (Math.abs(m_XPosition - finalXPosition) > 2) return false; // Pawns cannot move horizontally more than 2 steps
+        if (m_XPosition != finalXPosition && Math.abs(m_YPosition-finalYPosition) > 1) return false; // Pawns cannot move horizontally and more than one steps vertically at the same time
         if (color.equalsIgnoreCase("white")) { // We assume that the White pieces start from the top of the board
             if (Board.getNumberOfMoves() > 0 && finalYPosition - m_YPosition > 1) {
                 result = false;
@@ -28,7 +29,7 @@ public class Pawn extends Piece{
         if (color.equalsIgnoreCase("black")) { // We assume that the Black pieces start from the bottom of the board
             if (Board.getNumberOfMoves() > 0 && m_YPosition - finalYPosition > 1) {
                 result = false;
-            } else if (m_YPosition - finalYPosition > 1) {
+            } else if (m_YPosition - finalYPosition > 2 || m_YPosition < finalYPosition) {
                 result = false;
             }
         }

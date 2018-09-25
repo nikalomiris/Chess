@@ -22,6 +22,11 @@ public class Board {
     public static int getNumberOfMoves() {
         return numberOfMoves;
     }
+
+    public static void setNumberOfMoves(int numberOfMoves) {
+        Board.numberOfMoves = numberOfMoves;
+    }
+
     public static boolean isGameOver() {
         return gameOver;
     }
