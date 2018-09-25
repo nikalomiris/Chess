@@ -82,14 +82,6 @@ public abstract class Piece {
         return (finalXPosition <= 7 && finalXPosition >= 0 && finalYPosition <= 7 && finalYPosition >= 0);
     }
 
-    public int getM_XPosition() {
-        return m_XPosition;
-    }
-
-    public int getM_YPosition() {
-        return m_YPosition;
-    }
-
     public String getColor() {
         return color;
     }

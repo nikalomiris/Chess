@@ -5,13 +5,14 @@ import com.kalomiris.model.pieces.*;
 public class Board {
     private static Board ourInstance = new Board();
 
-    public static Board getInstance() {
-        return ourInstance;
-    }
 
     static private Piece[][] piecePositions = new Piece[8][8];
     static private int numberOfMoves = 0;
     static private boolean gameOver = false;
+
+    public static Board getInstance() {
+        return ourInstance;
+    }
 
     private Board() {}
 

@@ -1,7 +1,6 @@
 package com.kalomiris;
 
 import com.kalomiris.game.Board;
-import com.kalomiris.model.pieces.Piece;
 
 import java.util.Scanner;
 
