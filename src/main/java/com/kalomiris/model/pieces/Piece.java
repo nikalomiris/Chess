@@ -1,11 +1,11 @@
 package com.kalomiris.model.pieces;
 
 public abstract class Piece {
-    int m_XPosition, m_YPosition;
-    String color; // 0 = White, 1 = Black
-    String name;
-    boolean canJump;
-    boolean inTheGame;
+    protected int m_XPosition, m_YPosition;
+    protected String color; // 0 = White, 1 = Black
+    protected String name;
+    protected boolean canJump;
+    private boolean inTheGame;
 
     /**
      * Constructor for Piece
@@ -13,7 +13,7 @@ public abstract class Piece {
      * @param m_YPosition the y location of the piece
      * @param color the color/player of the piece (0 is White and 1 is Black)
      */
-    public Piece(int m_XPosition, int m_YPosition, String color) {
+    protected Piece(int m_XPosition, int m_YPosition, String color) {
         this.m_XPosition = m_XPosition;
         this.m_YPosition = m_YPosition;
         this.color = color;
@@ -54,7 +54,10 @@ public abstract class Piece {
     public abstract int calculateNumberOfSteps(int finalx, int finaly);
 
     public boolean[] upRightXY(int finalX, int finalY) {
-        boolean up = false, right = false, stableX = false, stableY = false;
+        boolean up = false;
+        boolean right = false;
+        boolean stableX = false;
+        boolean stableY = false;
         boolean[] result = new boolean[4];
         if (m_YPosition < finalY) {
             up = true;

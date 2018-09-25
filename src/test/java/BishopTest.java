@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class BishopTest {
-    Bishop bishop = new Bishop(3, 4, "White");
+    private Bishop bishop = new Bishop(3, 4, "White");
     @Test
     public void isValidPath() throws Exception {
         assertFalse(bishop.isValidPath(3, 6));

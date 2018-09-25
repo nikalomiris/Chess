@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 public class RookTest {
 
-    Rook rook = new Rook(3, 4, "White");
+    private Rook rook = new Rook(3, 4, "White");
     @Test
     public void isValidPath() throws Exception {
         assertFalse(rook.isValidPath(5, 6));
