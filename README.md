@@ -7,7 +7,6 @@
 [![license](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/nikalomiris/Chess/blob/master/LICENSE)
 [![version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/nikalomiris/Chess/blob/master/pom.xml)
 # Chess
-# Project Title
 
 One Paragraph of project description goes here
 
