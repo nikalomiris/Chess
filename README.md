@@ -3,6 +3,7 @@
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/nikalomiris/Chess.svg)](http://isitmaintained.com/project/nikalomiris/Chess "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/nikalomiris/Chess.svg)](http://isitmaintained.com/project/nikalomiris/Chess "Percentage of issues still open")
 [![Open Source Helpers](https://www.codetriage.com/nikalomiris/chess/badges/users.svg)](https://www.codetriage.com/nikalomiris/chess)
+[![codecov](https://codecov.io/gh/nikalomiris/Chess/branch/master/graph/badge.svg)](https://codecov.io/gh/nikalomiris/Chess)
 # Chess
 # Project Title
 
