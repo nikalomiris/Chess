@@ -1,10 +1,10 @@
 package com.kalomiris;
 
 import com.kalomiris.game.Board;
-import com.kalomiris.model.pieces.Piece;
 
 import java.util.Scanner;
 
+// This Branch is used for merging changes from the active development branches.
 public class Main {
 
     public static void main(String[] args) {

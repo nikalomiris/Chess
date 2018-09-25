@@ -1,11 +1,11 @@
 package com.kalomiris.model.pieces;
 
 public abstract class Piece {
-    int m_XPosition, m_YPosition;
-    String color; // 0 = White, 1 = Black
-    String name;
-    boolean canJump;
-    boolean inTheGame;
+    protected int m_XPosition, m_YPosition;
+    protected String color; // 0 = White, 1 = Black
+    protected String name;
+    protected boolean canJump;
+    private boolean inTheGame;
 
     /**
      * Constructor for Piece
@@ -13,7 +13,7 @@ public abstract class Piece {
      * @param m_YPosition the y location of the piece
      * @param color the color/player of the piece (0 is White and 1 is Black)
      */
-    public Piece(int m_XPosition, int m_YPosition, String color) {
+    protected Piece(int m_XPosition, int m_YPosition, String color) {
         this.m_XPosition = m_XPosition;
         this.m_YPosition = m_YPosition;
         this.color = color;
@@ -34,10 +34,30 @@ public abstract class Piece {
      * @param finaly final y position
      * @return an array of all the x, y positions that are on the path
      */
-    public abstract int[][] drawPath(int finalx, int finaly);
+    public int[][] drawPath(int finalx, int finaly) {
+        int numberOfSteps = calculateNumberOfSteps(finalx, finaly);
+        int[][] result = new int[numberOfSteps + 1][2];
+        result[0][0] = m_XPosition;
+        result[0][1] = m_YPosition;
+        boolean[] direction = upRightXY(finalx, finaly);
+
+        for (int i = 1; i <= numberOfSteps; i++) {
+            result[i][0] = direction[1] ? m_XPosition + i
+                    : (direction[2] ? m_XPosition : m_XPosition - i);
+            result[i][1] = direction[0] ? m_YPosition + i
+                    : (direction[3] ? m_YPosition : m_YPosition - i);
+        }
+
+        return result;
+    }
+
+    public abstract int calculateNumberOfSteps(int finalx, int finaly);
 
     public boolean[] upRightXY(int finalX, int finalY) {
-        boolean up = false, right = false, stableX = false, stableY = false;
+        boolean up = false;
+        boolean right = false;
+        boolean stableX = false;
+        boolean stableY = false;
         boolean[] result = new boolean[4];
         if (m_YPosition < finalY) {
             up = true;
@@ -60,14 +80,6 @@ public abstract class Piece {
 
     public boolean isValidFinalPosition(int finalXPosition, int finalYPosition) {
         return (finalXPosition <= 7 && finalXPosition >= 0 && finalYPosition <= 7 && finalYPosition >= 0);
-    }
-
-    public int getM_XPosition() {
-        return m_XPosition;
-    }
-
-    public int getM_YPosition() {
-        return m_YPosition;
     }
 
     public String getColor() {
