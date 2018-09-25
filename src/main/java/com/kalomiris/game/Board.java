@@ -35,29 +35,42 @@ public class Board {
     }
 
     public static void initiateGame() {
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (j == 7 || j == 0) {
-                    if (i == 4) {
-                        piecePositions[i][j] = new King(i, j, j > 5 ? "Black" : "White");
-                    }
-                    if (i == 3) {
-                        piecePositions[i][j] = new Queen(i, j, j > 5 ? "Black" : "White");
-                    }
-                    if (i == 2 || i == 5) {
-                        piecePositions[i][j] = new Bishop(i, j, j > 5 ? "Black" : "White");
-                    }
-                    if (i == 1 || i == 6) {
-                        piecePositions[i][j] = new Knight(i, j, j > 5 ? "Black" : "White");
-                    }
-                    if (i == 0 || i == 7) {
-                        piecePositions[i][j] = new Rook(i, j, j > 5 ? "Black" : "White");
-                    }
-                } else if (j == 1 || j == 6){
-                    piecePositions[i][j] = new Pawn(i, j, j > 5 ? "Black" : "White");
-                }
-            }
-        }
+        piecePositions[0][0] = new Rook(0,0, "White");
+        piecePositions[7][0] = new Rook(7,0, "White");
+        piecePositions[0][7] = new Rook(0,7, "Black");
+        piecePositions[7][7] = new Rook(7,7, "Black");
+
+        piecePositions[1][0] = new Knight(1,0, "White");
+        piecePositions[6][0] = new Knight(6,0, "White");
+        piecePositions[1][7] = new Knight(1,7, "Black");
+        piecePositions[6][7] = new Knight(6,7, "Black");
+
+        piecePositions[2][0] = new Bishop(2,0, "White");
+        piecePositions[5][0] = new Bishop(5,0, "White");
+        piecePositions[2][7] = new Bishop(2,7, "Black");
+        piecePositions[5][7] = new Bishop(5,7, "Black");
+
+        piecePositions[3][0] = new Queen(3,0, "White");
+        piecePositions[4][0] = new King(4,0, "White");
+        piecePositions[3][7] = new Queen(3,7, "Black");
+        piecePositions[4][7] = new King(4,7, "Black");
+
+        piecePositions[0][0] = new Pawn(0,0, "White");
+        piecePositions[1][0] = new Pawn(1,0, "White");
+        piecePositions[2][0] = new Pawn(2,0, "White");
+        piecePositions[3][0] = new Pawn(3,0, "White");
+        piecePositions[4][0] = new Pawn(4,0, "White");
+        piecePositions[5][0] = new Pawn(5,0, "White");
+        piecePositions[6][0] = new Pawn(6,0, "White");
+        piecePositions[7][0] = new Pawn(7,0, "White");
+        piecePositions[0][7] = new Pawn(0,7, "Black");
+        piecePositions[1][7] = new Pawn(1,7, "Black");
+        piecePositions[2][7] = new Pawn(2,7, "Black");
+        piecePositions[3][7] = new Pawn(3,7, "Black");
+        piecePositions[4][7] = new Pawn(4,7, "Black");
+        piecePositions[5][7] = new Pawn(5,7, "Black");
+        piecePositions[6][7] = new Pawn(6,7, "Black");
+        piecePositions[7][7] = new Pawn(7,7, "Black");
     }
 
     public static void changePiecePosition(Piece piece, int[] startFinal) {
