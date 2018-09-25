@@ -1,10 +1,12 @@
+package com.kalomiris.pieces;
+
 import com.kalomiris.model.pieces.Pawn;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class PawnTest {
-    Pawn pawn = new Pawn(0, 1, "White");
+    private Pawn pawn = new Pawn(0, 1, "White");
 
     @Test
     public void isValidPath() throws Exception {

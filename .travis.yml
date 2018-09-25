@@ -1,0 +1,7 @@
+language: java
+sudo: false # faster builds
+
+script: "mvn cobertura:cobertura -Dcobertura.report.format=xml"
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t 85380b17-6b00-42e0-b0b5-e28056d7131a

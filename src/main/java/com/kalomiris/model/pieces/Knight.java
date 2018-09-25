@@ -3,7 +3,7 @@ package com.kalomiris.model.pieces;
 import com.kalomiris.game.Type;
 
 public class Knight extends Piece {
-    Type type;
+    private Type type;
 
     /**
      * Constructor for Piece
@@ -51,6 +51,11 @@ public class Knight extends Piece {
         result[3][1] = finaly;
 
         return result;
+    }
+
+    @Override
+    public int calculateNumberOfSteps(int finalx, int finaly) {
+        return 0;
     }
 
     public Type getType() {
