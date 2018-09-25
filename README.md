@@ -1,5 +1,8 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f8a7e6d5923648d480b33fb50561fcfa)](https://app.codacy.com/app/nikalomiris/Chess?utm_source=github.com&utm_medium=referral&utm_content=nikalomiris/Chess&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.com/nikalomiris/Chess.svg?branch=master)](https://travis-ci.com/nikalomiris/Chess)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/nikalomiris/Chess.svg)](http://isitmaintained.com/project/nikalomiris/Chess "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/nikalomiris/Chess.svg)](http://isitmaintained.com/project/nikalomiris/Chess "Percentage of issues still open")
+[![Open Source Helpers](https://www.codetriage.com/nikalomiris/chess/badges/users.svg)](https://www.codetriage.com/nikalomiris/chess)
 # Chess
 # Project Title
 
