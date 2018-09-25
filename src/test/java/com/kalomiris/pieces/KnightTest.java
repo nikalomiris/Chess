@@ -1,3 +1,5 @@
+package com.kalomiris.pieces;
+
 import com.kalomiris.model.pieces.Knight;
 import org.junit.Test;
 

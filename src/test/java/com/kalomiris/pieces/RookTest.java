@@ -1,3 +1,5 @@
+package com.kalomiris.pieces;
+
 import com.kalomiris.model.pieces.Rook;
 import org.junit.Test;
 
