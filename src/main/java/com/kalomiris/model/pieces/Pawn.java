@@ -4,7 +4,7 @@ import com.kalomiris.game.Board;
 import com.kalomiris.game.Type;
 
 public class Pawn extends Piece{
-    Type type;
+    private Type type;
 
     public Pawn(int x, int y, String color) {
         super (x, y , color);

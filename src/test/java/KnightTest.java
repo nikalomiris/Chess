@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class KnightTest {
-    Knight knight = new Knight(4, 5, "White");
+    private Knight knight = new Knight(4, 5, "White");
     @Test
     public void isValidPath() throws Exception {
         assertFalse(knight.isValidPath(0, 4));

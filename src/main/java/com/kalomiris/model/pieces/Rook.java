@@ -3,7 +3,7 @@ package com.kalomiris.model.pieces;
 import com.kalomiris.game.Type;
 
 public class Rook extends Piece {
-    Type type;
+    private Type type;
 
     /**
      * Constructor for Rook
