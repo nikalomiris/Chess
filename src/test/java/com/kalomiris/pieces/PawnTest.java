@@ -16,6 +16,7 @@ public class PawnTest {
         assertFalse(pawn.isValidPath(0, 4));
         assertFalse(pawn.isValidPath(1, 3));
         assertFalse(pawn.isValidPath(0, 0));
+        assertFalse(pawn.isValidPath(3, 1));
 
         assertTrue(pawn.isValidPath(0, 2));
         assertTrue(pawn.isValidPath(0, 3));
