@@ -15,7 +15,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int[] nextMove = {0, 0, 0, 0};
 
-        while (!Board.isGameOver()) {
+        while (!Board.isGameOver()) { // TODO implement gameplay.
             System.out.print((turn ? "White\'s turn " : "Blacks turn ") + "please enter your next move (fromX fromY toX toY, e.g. 0 0 1 2): ");
             for (int i = 0; i < 4; i++) {
                 nextMove[i] = input.nextInt();
