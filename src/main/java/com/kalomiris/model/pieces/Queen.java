@@ -10,11 +10,11 @@ public class Queen extends Piece {
      * Constructor for Queen
      *
      * @param m_XPosition the x location of the piece
-     * @param m_YPosiiton the y location of the piece
+     * @param m_YPositon the y location of the piece
      * @param player       the color/player of the piece (0 is White and 1 is Black)
      */
-    public Queen(int m_XPosition, int m_YPosiiton, Player player) {
-        super(m_XPosition, m_YPosiiton, player);
+    public Queen(int m_XPosition, int m_YPositon, Player player) {
+        super(m_XPosition, m_YPositon, player);
         name = "Queen";
         type = Type.QUEEN;
         canJump = false;
