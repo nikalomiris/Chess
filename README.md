@@ -4,10 +4,10 @@
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/nikalomiris/Chess.svg)](http://isitmaintained.com/project/nikalomiris/Chess "Percentage of issues still open")
 [![Open Source Helpers](https://www.codetriage.com/nikalomiris/chess/badges/users.svg)](https://www.codetriage.com/nikalomiris/chess)
 [![codecov](https://codecov.io/gh/nikalomiris/Chess/branch/master/graph/badge.svg)](https://codecov.io/gh/nikalomiris/Chess)
-![license](https://img.shields.io/badge/license-GPL-blue.svg)
-![version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)
+[![license](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/nikalomiris/Chess/blob/master/LICENSE)
+[![version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/nikalomiris/Chess/blob/master/pom.xml)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/2247/badge)](https://bestpractices.coreinfrastructure.org/projects/2247)
 # Chess
-# Project Title
 
 One Paragraph of project description goes here
 

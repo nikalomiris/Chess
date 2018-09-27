@@ -1,12 +1,13 @@
 package com.kalomiris.pieces;
 
+import com.kalomiris.model.Player;
 import com.kalomiris.model.pieces.Knight;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class KnightTest {
-    private Knight knight = new Knight(4, 5, "White");
+    private Knight knight = new Knight(4, 5, Player.WHITE);
     @Test
     public void isValidPath() throws Exception {
         assertFalse(knight.isValidPath(0, 4));
@@ -30,11 +31,15 @@ public class KnightTest {
         int[][] path2 = {{4,5},{5,5},{6,5},{6,6}};
         int[][] path3 = {{4,5},{5,5},{6,5},{6,4}};
         int[][] path4 = {{4,5},{3,5},{2,5},{2,4}};
+        int[][] path5 = {{4,5},{4,4},{4,3},{5,3}};
+        int[][] path6 = {{4,5},{4,4},{4,3},{3,3}};
         assertArrayEquals(path, knight.drawPath(5, 7));
         assertArrayEquals(path1, knight.drawPath(3, 7));
         assertArrayEquals(path2, knight.drawPath(6, 6));
         assertArrayEquals(path3, knight.drawPath(6, 4));
         assertArrayEquals(path4, knight.drawPath(2, 4));
+        assertArrayEquals(path5, knight.drawPath(5, 3));
+        assertArrayEquals(path6, knight.drawPath(3, 3));
     }
 
 }

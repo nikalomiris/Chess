@@ -1,12 +1,13 @@
 package com.kalomiris.pieces;
 
+import com.kalomiris.model.Player;
 import com.kalomiris.model.pieces.Queen;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class QueenTest {
-    private Queen queen = new Queen(3, 4, "White");
+    private Queen queen = new Queen(3, 4, Player.WHITE);
     @Test
     public void isValidPath() throws Exception {
         assertFalse(queen.isValidPath(6, 6));

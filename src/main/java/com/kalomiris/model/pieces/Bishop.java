@@ -1,6 +1,7 @@
 package com.kalomiris.model.pieces;
 
-import com.kalomiris.game.Type;
+import com.kalomiris.model.Player;
+import com.kalomiris.model.Type;
 
 public class Bishop extends Piece {
     private Type type;
@@ -10,10 +11,10 @@ public class Bishop extends Piece {
      *
      * @param m_XPosition the x location of the piece
      * @param m_YPosiiton the y location of the piece
-     * @param color       the color/player of the piece (0 is White and 1 is Black)
+     * @param player       the color/player of the piece (0 is White and 1 is Black)
      */
-    public Bishop(int m_XPosition, int m_YPosiiton, String color) {
-        super(m_XPosition, m_YPosiiton, color);
+    public Bishop(int m_XPosition, int m_YPosiiton, Player player) {
+        super(m_XPosition, m_YPosiiton, player);
         name = "Bishop";
         type = Type.BISHOP;
         canJump = false;
