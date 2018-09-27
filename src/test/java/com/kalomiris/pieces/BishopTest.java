@@ -1,12 +1,13 @@
 package com.kalomiris.pieces;
 
+import com.kalomiris.model.Player;
 import com.kalomiris.model.pieces.Bishop;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class BishopTest {
-    private Bishop bishop = new Bishop(3, 4, "White");
+    private Bishop bishop = new Bishop(3, 4, Player.WHITE);
     @Test
     public void isValidPath() throws Exception {
         assertFalse(bishop.isValidPath(3, 6));

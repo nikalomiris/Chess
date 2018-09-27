@@ -1,22 +1,28 @@
 package com.kalomiris.model.pieces;
 
+import com.kalomiris.model.Player;
+
 public abstract class Piece {
     protected int m_XPosition, m_YPosition;
-    protected String color; // 0 = White, 1 = Black
+    protected Player player;
     protected String name;
     protected boolean canJump;
     private boolean inTheGame;
+    private boolean up = false;
+    private boolean right = false;
+    private boolean stableX = false;
+    private boolean stableY = false;
 
     /**
      * Constructor for Piece
      * @param m_XPosition the x location of the piece
      * @param m_YPosition the y location of the piece
-     * @param color the color/player of the piece (0 is White and 1 is Black)
+     * @param player the color/player of the piece (0 is White and 1 is Black)
      */
-    protected Piece(int m_XPosition, int m_YPosition, String color) {
+    protected Piece(int m_XPosition, int m_YPosition, Player player) {
         this.m_XPosition = m_XPosition;
         this.m_YPosition = m_YPosition;
-        this.color = color;
+        this.player = player;
         this.inTheGame = true;
     }
 
@@ -39,51 +45,49 @@ public abstract class Piece {
         int[][] result = new int[numberOfSteps + 1][2];
         result[0][0] = m_XPosition;
         result[0][1] = m_YPosition;
-        boolean[] direction = upRightXY(finalx, finaly);
+        setDirection(finalx, finaly);
 
         for (int i = 1; i <= numberOfSteps; i++) {
-            result[i][0] = direction[1] ? m_XPosition + i
-                    : (direction[2] ? m_XPosition : m_XPosition - i);
-            result[i][1] = direction[0] ? m_YPosition + i
-                    : (direction[3] ? m_YPosition : m_YPosition - i);
+            result[i][0] = right ? m_XPosition + i
+                    : (stableX ? m_XPosition : m_XPosition - i);
+            result[i][1] = up ? m_YPosition + i
+                    : (stableY ? m_YPosition : m_YPosition - i);
         }
+        resetDirection();
 
         return result;
     }
 
     public abstract int calculateNumberOfSteps(int finalx, int finaly);
 
-    public boolean[] upRightXY(int finalX, int finalY) {
-        boolean up = false;
-        boolean right = false;
-        boolean stableX = false;
-        boolean stableY = false;
-        boolean[] result = new boolean[4];
+    private void setDirection(int finalX, int finalY) {
         if (m_YPosition < finalY) {
             up = true;
-            result[0] = up;
         }
         if (m_XPosition < finalX) {
             right = true;
-            result[1] = right;
         }
         if (m_XPosition == finalX) {
             stableX = true;
-            result[2] = stableX;
         }
         if (m_YPosition == finalY) {
             stableY = true;
-            result[3] = stableY;
         }
-        return result;
+    }
+
+    private void resetDirection() {
+        up = false;
+        right = false;
+        stableX = false;
+        stableY = false;
     }
 
     public boolean isValidFinalPosition(int finalXPosition, int finalYPosition) {
         return (finalXPosition <= 7 && finalXPosition >= 0 && finalYPosition <= 7 && finalYPosition >= 0);
     }
 
-    public String getColor() {
-        return color;
+    public Player getPlayer() {
+        return player;
     }
 
     public String getName() {

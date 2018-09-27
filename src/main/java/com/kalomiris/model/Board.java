@@ -1,4 +1,4 @@
-package com.kalomiris.game;
+package com.kalomiris.model;
 
 import com.kalomiris.model.pieces.*;
 
@@ -35,42 +35,42 @@ public class Board {
     }
 
     public static void initiateGame() {
-        piecePositions[0][0] = new Rook(0,0, "White");
-        piecePositions[7][0] = new Rook(7,0, "White");
-        piecePositions[0][7] = new Rook(0,7, "Black");
-        piecePositions[7][7] = new Rook(7,7, "Black");
+        piecePositions[0][0] = new Rook(0,0, Player.WHITE);
+        piecePositions[7][0] = new Rook(7,0, Player.WHITE);
+        piecePositions[0][7] = new Rook(0,7, Player.BLACK);
+        piecePositions[7][7] = new Rook(7,7, Player.BLACK);
 
-        piecePositions[1][0] = new Knight(1,0, "White");
-        piecePositions[6][0] = new Knight(6,0, "White");
-        piecePositions[1][7] = new Knight(1,7, "Black");
-        piecePositions[6][7] = new Knight(6,7, "Black");
+        piecePositions[1][0] = new Knight(1,0, Player.WHITE);
+        piecePositions[6][0] = new Knight(6,0, Player.WHITE);
+        piecePositions[1][7] = new Knight(1,7, Player.BLACK);
+        piecePositions[6][7] = new Knight(6,7, Player.BLACK);
 
-        piecePositions[2][0] = new Bishop(2,0, "White");
-        piecePositions[5][0] = new Bishop(5,0, "White");
-        piecePositions[2][7] = new Bishop(2,7, "Black");
-        piecePositions[5][7] = new Bishop(5,7, "Black");
+        piecePositions[2][0] = new Bishop(2,0, Player.WHITE);
+        piecePositions[5][0] = new Bishop(5,0, Player.WHITE);
+        piecePositions[2][7] = new Bishop(2,7, Player.BLACK);
+        piecePositions[5][7] = new Bishop(5,7, Player.BLACK);
 
-        piecePositions[3][0] = new Queen(3,0, "White");
-        piecePositions[4][0] = new King(4,0, "White");
-        piecePositions[3][7] = new Queen(3,7, "Black");
-        piecePositions[4][7] = new King(4,7, "Black");
+        piecePositions[3][0] = new Queen(3,0, Player.WHITE);
+        piecePositions[4][0] = new King(4,0, Player.WHITE);
+        piecePositions[3][7] = new Queen(3,7, Player.BLACK);
+        piecePositions[4][7] = new King(4,7, Player.BLACK);
 
-        piecePositions[0][0] = new Pawn(0,0, "White");
-        piecePositions[1][0] = new Pawn(1,0, "White");
-        piecePositions[2][0] = new Pawn(2,0, "White");
-        piecePositions[3][0] = new Pawn(3,0, "White");
-        piecePositions[4][0] = new Pawn(4,0, "White");
-        piecePositions[5][0] = new Pawn(5,0, "White");
-        piecePositions[6][0] = new Pawn(6,0, "White");
-        piecePositions[7][0] = new Pawn(7,0, "White");
-        piecePositions[0][7] = new Pawn(0,7, "Black");
-        piecePositions[1][7] = new Pawn(1,7, "Black");
-        piecePositions[2][7] = new Pawn(2,7, "Black");
-        piecePositions[3][7] = new Pawn(3,7, "Black");
-        piecePositions[4][7] = new Pawn(4,7, "Black");
-        piecePositions[5][7] = new Pawn(5,7, "Black");
-        piecePositions[6][7] = new Pawn(6,7, "Black");
-        piecePositions[7][7] = new Pawn(7,7, "Black");
+        piecePositions[0][1] = new Pawn(0,0, Player.WHITE);
+        piecePositions[1][1] = new Pawn(1,0, Player.WHITE);
+        piecePositions[2][1] = new Pawn(2,0, Player.WHITE);
+        piecePositions[3][1] = new Pawn(3,0, Player.WHITE);
+        piecePositions[4][1] = new Pawn(4,0, Player.WHITE);
+        piecePositions[5][1] = new Pawn(5,0, Player.WHITE);
+        piecePositions[6][1] = new Pawn(6,0, Player.WHITE);
+        piecePositions[7][1] = new Pawn(7,0, Player.WHITE);
+        piecePositions[0][6] = new Pawn(0,7, Player.BLACK);
+        piecePositions[1][6] = new Pawn(1,7, Player.BLACK);
+        piecePositions[2][6] = new Pawn(2,7, Player.BLACK);
+        piecePositions[3][6] = new Pawn(3,7, Player.BLACK);
+        piecePositions[4][6] = new Pawn(4,7, Player.BLACK);
+        piecePositions[5][6] = new Pawn(5,7, Player.BLACK);
+        piecePositions[6][6] = new Pawn(6,7, Player.BLACK);
+        piecePositions[7][6] = new Pawn(7,7, Player.BLACK);
     }
 
     public static void changePiecePosition(Piece piece, int[] startFinal) {
@@ -101,7 +101,7 @@ public class Board {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (null != piecePositions[j][i]){
-                    System.out.print(piecePositions[j][i].getColor().charAt(0) + " " + piecePositions[j][i].getName() + " ");
+                    System.out.print(piecePositions[j][i].getPlayer().toString() + " " + piecePositions[j][i].getName() + " ");
                 } else {
                     System.out.print("Empty ");
                 }

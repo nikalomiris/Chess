@@ -1,5 +1,6 @@
 package com.kalomiris.pieces;
 
+import com.kalomiris.model.Player;
 import com.kalomiris.model.pieces.Rook;
 import org.junit.Test;
 
@@ -7,7 +8,7 @@ import static org.junit.Assert.*;
 
 public class RookTest {
 
-    private Rook rook = new Rook(3, 4, "White");
+    private Rook rook = new Rook(3, 4, Player.WHITE);
     @Test
     public void isValidPath() throws Exception {
         assertFalse(rook.isValidPath(5, 6));

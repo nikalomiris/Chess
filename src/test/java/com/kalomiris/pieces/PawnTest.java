@@ -1,15 +1,16 @@
 package com.kalomiris.pieces;
 
-import com.kalomiris.game.Board;
-import com.kalomiris.game.Type;
+import com.kalomiris.model.Board;
+import com.kalomiris.model.Player;
+import com.kalomiris.model.Type;
 import com.kalomiris.model.pieces.Pawn;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class PawnTest {
-    private Pawn pawn = new Pawn(0, 1, "White");
-    private Pawn pawn2 = new Pawn(0, 6, "Black");
+    private Pawn pawn = new Pawn(0, 1, Player.WHITE);
+    private Pawn pawn2 = new Pawn(0, 6, Player.BLACK);
 
     @Test
     public void isValidPath() throws Exception {

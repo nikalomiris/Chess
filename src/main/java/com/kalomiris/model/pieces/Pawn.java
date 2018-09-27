@@ -1,13 +1,14 @@
 package com.kalomiris.model.pieces;
 
-import com.kalomiris.game.Board;
-import com.kalomiris.game.Type;
+import com.kalomiris.model.Board;
+import com.kalomiris.model.Player;
+import com.kalomiris.model.Type;
 
 public class Pawn extends Piece{
     private Type type;
 
-    public Pawn(int x, int y, String color) {
-        super (x, y , color);
+    public Pawn(int x, int y, Player player) {
+        super (x, y , player);
         name = "Pawn";
         this.type = Type.PAWN;
         canJump = false;
@@ -18,7 +19,7 @@ public class Pawn extends Piece{
         boolean result = true;
         if (Math.abs(m_XPosition - finalXPosition) > 2) return false; // Pawns cannot move horizontally more than 2 steps
         if (m_XPosition != finalXPosition && Math.abs(m_YPosition-finalYPosition) > 1) return false; // Pawns cannot move horizontally and more than one steps vertically at the same time
-        if (color.equalsIgnoreCase("white")) { // We assume that the White pieces start from the top of the board
+        if (player.toString().equalsIgnoreCase("white")) { // We assume that the White pieces start from the top of the board
             if (Board.getNumberOfMoves() > 0 && finalYPosition - m_YPosition > 1) {
                 result = false;
             }
@@ -26,7 +27,7 @@ public class Pawn extends Piece{
                 result = false;
             }
         }
-        if (color.equalsIgnoreCase("black")) { // We assume that the Black pieces start from the bottom of the board
+        if (player.toString().equalsIgnoreCase("black")) { // We assume that the Black pieces start from the bottom of the board
             if (Board.getNumberOfMoves() > 0 && m_YPosition - finalYPosition > 1) {
                 result = false;
             } else if (m_YPosition - finalYPosition > 2 || m_YPosition < finalYPosition) {
