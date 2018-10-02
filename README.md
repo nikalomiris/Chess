@@ -7,9 +7,10 @@
 [![license](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/nikalomiris/Chess/blob/master/LICENSE)
 [![version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/nikalomiris/Chess/blob/master/pom.xml)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/2247/badge)](https://bestpractices.coreinfrastructure.org/projects/2247)
+
 # Chess
 
-One Paragraph of project description goes here
+A simple CLI-based chess program.
 
 ## Getting Started
 
@@ -20,7 +21,9 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
+1.) Install JDK: https://www.oracle.com/technetwork/java/javase/downloads/index.html
+2.) Install maven: http://maven.apache.org/download.cgi
+3.) Install a Java IDE (Eclipse, IntelliJ IDEA, or Netbeans)
 ```
 
 ### Installing
@@ -29,28 +32,29 @@ A step by step series of examples that tell you how to get a development env run
 
 Say what the step will be
 
-```
-Give the example
-```
-
-And repeat
+1.) Import the project in your IDE.
+2.) Right click on the project, select maven clean and build.
+3.) Once clean build is complete, select maven run.
 
 ```
-until finished
+mvn clean
+mvn build
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+```
+mvn test
+```
+
+
 
 ### Break down into end to end tests
 
 Explain what these tests test and why
 
 ```
-Give an example
+The tests test the various valid and invalid paths that can be taken by the chess pieces. For example, a rook cannot move to diagonal pieces, so a rook at position (3, 4) on the board cannot move to position (5, 6), but can move to position (3, 7).
 ```
 
 ### And coding style tests
@@ -67,9 +71,9 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+- [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+- [Maven](https://maven.apache.org/) - Dependency Management
+- [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contributing
 
@@ -81,7 +85,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+- **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -91,6 +95,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
